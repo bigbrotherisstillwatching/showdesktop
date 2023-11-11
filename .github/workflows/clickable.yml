@@ -47,7 +47,7 @@ jobs:
         uses: tuxecure/clickable@v1
         with:
           image: clickable/ci-20.04-${{ matrix.arch }}
-          "ignore_review_warnings": true
+          ignore_review_warnings: true
           run: clickable build --verbose  ${BUILD_TYPE}
       - uses: actions/upload-artifact@v3
         if: always()
