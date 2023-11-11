@@ -14,8 +14,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [armhf, arm64, amd64]
-        build: [Release, Debug]
+        arch: [arm64]
+        build: [Release]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,17 +25,17 @@ jobs:
       - name: Install Dependencies
         run: |
           python3 -m pip install clickable-ut
-        env:
-          BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
-          CLICKABLE_FRAMEWORK: ubuntu-sdk-20.04
+#        env:
+#          BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
+#          CLICKABLE_FRAMEWORK: ubuntu-sdk-20.04
       - name: Build
         run: |
-         clickable build --verbose  ${BUILD_TYPE}
+         CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build --verbose  --arch ${{ matrix.arch }}
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: "ubports-${{ matrix.arch }}--${{ matrix.build }}--click"
+          name: "showdesktop-${{ matrix.arch }}--${{ matrix.build }}--click"
           path: "build/*/app/*.click"
           if-no-files-found: ignore
 #          retention-days: 20
