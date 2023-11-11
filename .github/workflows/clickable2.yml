@@ -10,26 +10,32 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  ubuntu-touch:
     strategy:
+      fail-fast: false
       matrix:
-        arch: [arm64]
+        arch: [armhf, arm64, amd64]
+        build: [Release, Debug]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
+#        with:
+#          submodules: recursive
       - name: Install Dependencies
         run: |
           python3 -m pip install clickable-ut
+        env:
+          BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
+          CLICKABLE_FRAMEWORK: ubuntu-sdk-20.04
       - name: Build
         run: |
-         CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build --verbose --arch ${{ matrix.arch }}
+         clickable build --verbose  ${BUILD_TYPE}
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
+        if: always()
         with:
-          name: showdesktop_${{ matrix.arch }}
-          path: build/*/app/*.click
-          if-no-files-found: error
+          name: "ubports-${{ matrix.arch }}--${{ matrix.build }}--click"
+          path: "build/*/app/*.click"
+          if-no-files-found: ignore
 #          retention-days: 20
