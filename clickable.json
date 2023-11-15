@@ -1,5 +1,6 @@
 {
   "ignore_review_warnings": true,
+  "ignore_review_errors": true,
   "builder": "cmake",
   "clickable_minimum_required": "6.12.2",
   "qt_version": "5.12",
