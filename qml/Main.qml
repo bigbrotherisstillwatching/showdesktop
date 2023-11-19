@@ -22,6 +22,8 @@ import AccountsService 0.1
 
         Rectangle {
             anchors.fill: parent
+            width: 100
+            height: 100
 
         Image {
             anchors.fill: parent
