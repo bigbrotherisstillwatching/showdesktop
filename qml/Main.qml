@@ -27,7 +27,7 @@ import AccountsService 0.1
             anchors.fill: parent
             visible: true
             source: AccountsService.backgroundFile
-            fillMode: Image.Tile
+            fillMode: Image.PreserveAspectCrop
         }
   
     }
