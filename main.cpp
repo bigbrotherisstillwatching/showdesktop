@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     QQuickView *view = new QQuickView(engine, nullptr);
 
     view->setSource(QUrl("qml/Main.qml"));
-    view->setResizeMode(QQuickView::SizeRootObjectToView);
+//neu    view->setResizeMode(QQuickView::SizeRootObjectToView);
     const QSize size(200, 200);//neu
     view->resize(size);//neu
     view->show();
