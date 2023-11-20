@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
     view->setSource(QUrl("qml/Main.qml"));
     view->setResizeMode(QQuickView::SizeRootObjectToView);
     view->lower();
-    view->show();
 
     return app->exec();
 }
