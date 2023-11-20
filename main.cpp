@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     view->setResizeMode(QQuickView::SizeRootObjectToView);
 //neu    const QSize size(200, 200);
 //neu    view->resize(size);
-    view->showFullScreen();
+    view->showMaximized();
 
     return app->exec();
 }
