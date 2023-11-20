@@ -4,6 +4,7 @@
 #include <QString>
 #include <QQuickView>
 #include <QQmlEngine>
+#include <QSize>
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +18,8 @@ int main(int argc, char *argv[])
 
     view->setSource(QUrl("qml/Main.qml"));
     view->setResizeMode(QQuickView::SizeRootObjectToView);
-    view->resize(300, 300);
+    const QSize size(200, 200);
+    view->resize(size);
     view->show();
 
     return app->exec();
