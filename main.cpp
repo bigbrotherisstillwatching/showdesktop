@@ -4,7 +4,7 @@
 #include <QString>
 #include <QQuickView>
 #include <QQmlEngine>
-#include <QSize>//neu
+//neu#include <QSize>
 
 int main(int argc, char *argv[])
 {
@@ -17,10 +17,10 @@ int main(int argc, char *argv[])
     QQuickView *view = new QQuickView(engine, nullptr);
 
     view->setSource(QUrl("qml/Main.qml"));
-//neu    view->setResizeMode(QQuickView::SizeRootObjectToView);
-    const QSize size(200, 200);//neu
-    view->resize(size);//neu
-    view->show();
+    view->setResizeMode(QQuickView::SizeRootObjectToView);
+//neu    const QSize size(200, 200);
+//neu    view->resize(size);
+    view->showFullScreen();
 
     return app->exec();
 }
