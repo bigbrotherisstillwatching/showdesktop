@@ -24,7 +24,7 @@ import AccountsService 0.1
             anchors.fill: parent
 
         Image {
-            x: -90
+            x: -75
             y: -150
 //            anchors.fill: parent
             visible: true
