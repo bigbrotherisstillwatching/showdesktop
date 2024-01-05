@@ -24,7 +24,7 @@ import AccountsService 0.1
             anchors.fill: parent
 
         Image {
-//            x: -50
+            x: -50
 //            anchors.fill: parent
             visible: true
             source: AccountsService.backgroundFile
