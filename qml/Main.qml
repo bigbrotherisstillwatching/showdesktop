@@ -21,8 +21,8 @@ import QtQuick.Layouts 1.3
 import AccountsService 0.1
 
         Rectangle {
-//            anchors.fill: parent
-            x: 100
+            anchors.fill: parent
+//            x: 100
         Image {
 //            x: -60
 //            y: -150
