@@ -22,15 +22,16 @@ import AccountsService 0.1
 
         Rectangle {
             anchors.fill: parent
+            color: "transparent"
 //            x: 100
-        Image {
+//        Image {
 //            x: -60
 //            y: -150
-            anchors.fill: parent
-            visible: true
-            source: AccountsService.backgroundFile
-            fillMode: Image.PreserveAspectCrop
-        }
+//            anchors.fill: parent
+//            visible: true
+//            source: AccountsService.backgroundFile
+//            fillMode: Image.PreserveAspectCrop
+//        }
   
     }
 
